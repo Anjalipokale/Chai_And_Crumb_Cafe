@@ -1,0 +1,11 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Staff login</title><meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="/style.css"></head>
+<body><header class="top"><div class="wrap"><h1>Staff area</h1><div><span id="who"></span> <button id="logout" class="ghost" hidden style="color:inherit;border-color:currentColor">Log out</button></div></div></header>
+<main class="wrap">
+<form id="login" class="card" style="max-width:380px">
+  <h2>Log in</h2><label for="email">Email</label><input id="email" type="email" autocomplete="username" required>
+  <label for="pw">Password</label><input id="pw" type="password" autocomplete="current-password" required>
+  <p id="lerr" class="err" role="alert"></p><button type="submit">Log in</button>
+</form>
+<div id="app" hidden></div></main>
+<script src="/common.js"></script><script src="/admin.js"></script></body></html>

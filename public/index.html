@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{NAME}} | Menu and Online Ordering in {{CITY}}</title>
+<meta name="description" content="Order chai, coffee, snacks and meals online from {{NAME}} in {{CITY}}. Choose pickup or home delivery and track your order live.">
+<link rel="canonical" href="{{CANONICAL}}">
+<meta property="og:type" content="website"><meta property="og:title" content="{{NAME}} | Order online in {{CITY}}">
+<meta property="og:description" content="Fresh chai, coffee and snacks for pickup or delivery."><meta property="og:url" content="{{CANONICAL}}">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{{JSONLD}}</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><h1>{{NAME}}</h1><nav aria-label="Staff"><a href="/admin">Staff login</a></nav></div></header>
+<main class="wrap">
+  <div class="hero"><h1 id="menu">Menu for pickup and delivery in {{CITY}}</h1>
+  <p>Pick your items, choose pickup or home delivery, and track the order from the kitchen to your door.</p></div>
+  <div class="layout">
+    <div>{{MENU}}</div>
+    <aside class="cart card" aria-label="Your cart">
+      <h2>Your order</h2>
+      <div id="lines"><p class="muted">Your cart is empty. Add something from the menu.</p></div>
+      <form id="co" hidden novalidate>
+        <label for="name">Name</label><input id="name" name="name" autocomplete="name" required>
+        <label for="phone">Mobile number</label><input id="phone" name="phone" inputmode="numeric" maxlength="10" autocomplete="tel-national" required>
+        <div class="radio" role="radiogroup" aria-label="Order type">
+          <label><input type="radio" name="type" value="pickup" checked> Pickup</label>
+          <label><input type="radio" name="type" value="delivery"> Delivery</label>
+        </div>
+        <div id="dfields" hidden>
+          <label for="address">Delivery address</label><textarea id="address" name="address" rows="2" autocomplete="street-address"></textarea>
+          <label for="pincode">Pincode</label><input id="pincode" name="pincode" inputmode="numeric" maxlength="6" autocomplete="postal-code">
+          <p class="muted">We deliver to: {{PINS}}</p>
+        </div>
+        <div id="summary" aria-live="polite"></div>
+        <p id="formerr" class="err" role="alert"></p>
+        <button id="place" type="submit">Place order and pay</button>
+      </form>
+    </aside>
+  </div>
+</main>
+<footer class="wrap">Demo payments only. No real money is charged.</footer>
+<script src="/common.js"></script><script src="/app.js"></script>
+</body></html>
